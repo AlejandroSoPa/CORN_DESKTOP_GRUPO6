@@ -73,22 +73,22 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="137.0" layoutY="73.0" prefHeight="18.0" prefWidth="142.0">
+                  <Label fx:id="name" layoutX="137.0" layoutY="73.0" prefHeight="18.0" prefWidth="142.0">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="137.0" layoutY="117.0" prefHeight="18.0" prefWidth="142.0">
+                  <Label fx:id="surname" layoutX="137.0" layoutY="117.0" prefHeight="18.0" prefWidth="142.0">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="137.0" layoutY="163.0" prefHeight="18.0" prefWidth="142.0">
+                  <Label fx:id="phone" layoutX="137.0" layoutY="163.0" prefHeight="18.0" prefWidth="142.0">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="137.0" layoutY="212.0" prefHeight="18.0" prefWidth="142.0">
+                  <Label fx:id="email" layoutX="137.0" layoutY="212.0" prefHeight="18.0" prefWidth="142.0">
                      <font>
                         <Font size="17.0" />
                      </font>

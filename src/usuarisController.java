@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.VBox;
 
@@ -15,7 +16,19 @@ public class usuarisController {
     private VBox yPane = new VBox();
 
     @FXML
-    private ProgressIndicator loading;
+    public ProgressIndicator loading;
+
+    @FXML
+    private Label name;
+
+    @FXML
+    private Label surname;
+
+    @FXML
+    private Label phone;
+
+    @FXML
+    private Label email;
 
     private void loadUsersCallback (String response) {
 
@@ -61,10 +74,30 @@ public class usuarisController {
     public void loadUsers(){
         JSONObject obj = new JSONObject("{}");
         loading.setVisible(true);
-        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + ":" + Main.port + "/API/get_profiles",obj.toString(), (response) -> {
+        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/get_profiles",obj.toString(), (response) -> {
             System.out.println(response);
             loadUsersCallback(response);
             loading.setVisible(false);
         });
+    }
+
+    public void setName(String name) {
+        this.name.setText(name);
+    }
+    public void setSurname(String surname) {
+        this.surname.setText(surname);
+    }
+    public void setPhone(String phone) {
+        this.phone.setText(phone);
+    }
+    public void setEmail(String email) {
+        this.email.setText(email); 
+    }
+
+    public void clear(){
+        this.name.setText("");
+        this.surname.setText("");
+        this.phone.setText("");
+        this.email.setText(""); 
     }
 }
