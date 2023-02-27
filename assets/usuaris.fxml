@@ -101,11 +101,15 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="298.0">
                <children>
-                  <VBox fx:id="yPane" prefHeight="289.6" prefWidth="298.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <cursor>
-                        <Cursor fx:constant="CROSSHAIR" />
-                     </cursor>
-                  </VBox>
+                  <ScrollPane prefHeight="290.0" prefWidth="294.0">
+                     <content>
+                        <VBox fx:id="yPane" prefHeight="289.6" prefWidth="298.4">
+                           <cursor>
+                              <Cursor fx:constant="CROSSHAIR" />
+                           </cursor>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
         </content>
