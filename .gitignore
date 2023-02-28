@@ -1,0 +1,9 @@
+lib
+bin
+
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+.Spotlight-V100
+.Trashes
