@@ -16,6 +16,9 @@ public class usuarisController {
     private VBox yPane = new VBox();
 
     @FXML
+    public VBox yPane2 = new VBox();
+
+    @FXML
     public ProgressIndicator loading;
 
     @FXML
@@ -29,6 +32,9 @@ public class usuarisController {
 
     @FXML
     private Label email;
+
+    @FXML
+    private Label wallet;
 
     private void loadUsersCallback (String response) {
 
@@ -74,7 +80,7 @@ public class usuarisController {
     public void loadUsers(){
         JSONObject obj = new JSONObject("{}");
         loading.setVisible(true);
-        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/get_profiles",obj.toString(), (response) -> {
+        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +":"+Main.port+ "/API/get_profiles",obj.toString(), (response) -> {
             System.out.println(response);
             loadUsersCallback(response);
             loading.setVisible(false);
@@ -93,11 +99,16 @@ public class usuarisController {
     public void setEmail(String email) {
         this.email.setText(email); 
     }
+    public void setWallet(String wallet) {
+        this.wallet.setText(wallet); 
+    }
 
     public void clear(){
         this.name.setText("");
         this.surname.setText("");
         this.phone.setText("");
         this.email.setText(""); 
+        this.wallet.setText("");
+        this.yPane2.getChildren().clear();
     }
 }

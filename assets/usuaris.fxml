@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
    <children>
       <Label layoutX="269.0" layoutY="22.0" prefHeight="46.0" prefWidth="161.0" text="USUARIS">
          <font>
@@ -93,17 +93,27 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
+                  <Label layoutX="36.0" layoutY="246.0" text="Saldo:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wallet" layoutX="137.0" layoutY="248.0" prefHeight="18.0" prefWidth="142.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </content>
       </ScrollPane>
-      <ScrollPane layoutX="21.0" layoutY="76.0" prefHeight="296.0" prefWidth="301.0">
+      <ScrollPane layoutX="21.0" layoutY="76.0" prefHeight="601.0" prefWidth="302.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="298.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="298.0">
                <children>
-                  <ScrollPane prefHeight="290.0" prefWidth="294.0">
+                  <ScrollPane prefHeight="602.0" prefWidth="294.0">
                      <content>
-                        <VBox fx:id="yPane" prefHeight="289.6" prefWidth="298.4">
+                        <VBox fx:id="yPane" prefHeight="598.0" prefWidth="298.0">
                            <cursor>
                               <Cursor fx:constant="CROSSHAIR" />
                            </cursor>
@@ -113,6 +123,26 @@
                </children>
             </AnchorPane>
         </content>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ScrollPane>
+      <ScrollPane layoutX="376.0" layoutY="381.0" prefHeight="296.0" prefWidth="301.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="298.0">
+               <children>
+                  <ScrollPane prefHeight="290.0" prefWidth="294.0">
+                     <content>
+                        <VBox fx:id="yPane2" prefHeight="289.6" prefWidth="298.4">
+                           <cursor>
+                              <Cursor fx:constant="CROSSHAIR" />
+                           </cursor>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </content>
          <effect>
             <InnerShadow />
          </effect>
