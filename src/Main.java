@@ -12,16 +12,16 @@ public class Main extends Application {
     public static UtilsWS socketClient;
 
     // Local test
-    public static int port = 3000;
-    public static String protocol = "http";
-    public static String host = "localhost";
-    public static String protocolWS = "ws";
+    // public static int port = 3000;
+    // public static String protocol = "http";
+    // public static String host = "localhost";
+    // public static String protocolWS = "ws";
 
     // Exemple de configuració per Railway
-    // public static int port = 8015;
-    // public static String protocol = "https";
-    // public static String host = "cornapigrupo6-production.up.railway.app";
-    // public static String protocolWS = "wss";
+    public static int port = 8015;
+    public static String protocol = "https";
+    public static String host = "cornapigrupo6-production.up.railway.app";
+    public static String protocolWS = "wss";
 
     // Camps JavaFX a modificar
     public static Label consoleName = new Label();
