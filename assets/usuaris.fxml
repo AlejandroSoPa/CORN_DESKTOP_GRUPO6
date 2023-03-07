@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1084.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
    <children>
       <Label layoutX="269.0" layoutY="22.0" prefHeight="46.0" prefWidth="161.0" text="USUARIS">
          <font>
@@ -107,13 +108,13 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <ScrollPane layoutX="21.0" layoutY="76.0" prefHeight="601.0" prefWidth="302.0">
+      <ScrollPane layoutX="21.0" layoutY="176.0" prefHeight="496.0" prefWidth="302.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="298.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="298.0">
                <children>
-                  <ScrollPane prefHeight="602.0" prefWidth="294.0">
+                  <ScrollPane layoutX="2.0" layoutY="1.0" prefHeight="490.0" prefWidth="302.0">
                      <content>
-                        <VBox fx:id="yPane" prefHeight="598.0" prefWidth="298.0">
+                        <VBox fx:id="yPane" prefHeight="472.0" prefWidth="298.0">
                            <cursor>
                               <Cursor fx:constant="CROSSHAIR" />
                            </cursor>
@@ -147,5 +148,11 @@
             <InnerShadow />
          </effect>
       </ScrollPane>
+      <Label layoutX="21.0" layoutY="76.0" text="Filtres:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Spinner layoutX="259.0" layoutY="106.0" prefHeight="26.0" prefWidth="63.0" />
    </children>
 </AnchorPane>
