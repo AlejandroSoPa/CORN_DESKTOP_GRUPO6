@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
+   <children>
+      <Label layoutX="269.0" layoutY="22.0" prefHeight="46.0" prefWidth="161.0" text="USUARIS">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="37.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.587121226570823" endY="0.4734848493879491" startX="0.5492424468199413">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.016150740242261118">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.26015228033065796" green="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="Info" layoutX="286.0" layoutY="372.0" textFill="#ff1c0d" />
+      <ProgressIndicator fx:id="loading" layoutX="324.0" layoutY="198.0" visible="false" />
+      <ScrollPane layoutX="376.0" layoutY="76.0" prefHeight="296.0" prefWidth="302.0">
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" />
+         </effect>
+         <content>
+            <AnchorPane prefHeight="291.0" prefWidth="297.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="14.0" text="DETALLS">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="71.0" text="Nom:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="115.0" text="Cognom:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="161.0" text="Telèfon:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="210.0" text="Correu:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name" layoutX="137.0" layoutY="73.0" prefHeight="18.0" prefWidth="142.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="surname" layoutX="137.0" layoutY="117.0" prefHeight="18.0" prefWidth="142.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="phone" layoutX="137.0" layoutY="163.0" prefHeight="18.0" prefWidth="142.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="email" layoutX="137.0" layoutY="212.0" prefHeight="18.0" prefWidth="142.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="246.0" text="Saldo:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wallet" layoutX="137.0" layoutY="248.0" prefHeight="18.0" prefWidth="142.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="21.0" layoutY="76.0" prefHeight="601.0" prefWidth="302.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="298.0">
+               <children>
+                  <ScrollPane prefHeight="602.0" prefWidth="294.0">
+                     <content>
+                        <VBox fx:id="yPane" prefHeight="598.0" prefWidth="298.0">
+                           <cursor>
+                              <Cursor fx:constant="CROSSHAIR" />
+                           </cursor>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+        </content>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ScrollPane>
+      <ScrollPane layoutX="376.0" layoutY="381.0" prefHeight="296.0" prefWidth="301.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="298.0">
+               <children>
+                  <ScrollPane prefHeight="290.0" prefWidth="294.0">
+                     <content>
+                        <VBox fx:id="yPane2" prefHeight="289.6" prefWidth="298.4">
+                           <cursor>
+                              <Cursor fx:constant="CROSSHAIR" />
+                           </cursor>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </content>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ScrollPane>
+   </children>
+</AnchorPane>
