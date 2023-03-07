@@ -80,7 +80,7 @@ public class usuarisController {
     public void loadUsers(){
         JSONObject obj = new JSONObject("{}");
         loading.setVisible(true);
-        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +":"+Main.port+ "/API/get_profiles",obj.toString(), (response) -> {
+        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/get_profiles",obj.toString(), (response) -> {
             System.out.println(response);
             loadUsersCallback(response);
             loading.setVisible(false);

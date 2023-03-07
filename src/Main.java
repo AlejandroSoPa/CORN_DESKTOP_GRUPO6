@@ -18,7 +18,7 @@ public class Main extends Application {
     // public static String protocolWS = "ws";
 
     // Exemple de configuració per Railway
-    public static int port = 8015;
+    public static int port = 5997;
     public static String protocol = "https";
     public static String host = "cornapigrupo6-production.up.railway.app";
     public static String protocolWS = "wss";

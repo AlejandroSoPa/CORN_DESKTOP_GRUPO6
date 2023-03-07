@@ -24,7 +24,7 @@ public class usuariController {
         JSONObject obj = new JSONObject("{}");
         obj.put("phone",this.phone.getText());
         c0.loading.setVisible(true);
-        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +":"+Main.port+ "/API/get_profile",obj.toString(), (response) -> {
+        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +"/API/get_profile",obj.toString(), (response) -> {
             JSONObject objResponse = new JSONObject(response);
             
             if (objResponse.getString("status").equals("OK")) {
@@ -45,7 +45,7 @@ public class usuariController {
 
         });
         
-        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +":"+Main.port+ "/API/transaccions",obj.toString(), (response) -> {
+        UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/transaccions",obj.toString(), (response) -> {
             JSONObject objResponse = new JSONObject(response);
             
             if (objResponse.getString("status").equals("OK")) {
