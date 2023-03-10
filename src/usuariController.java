@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.Base64;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -8,11 +9,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 
 public class usuariController {
     
     @FXML
     private Label title, subtitle,phone;
+
+    private Integer id;
 
     @FXML
     private void handleMenuAction() {
@@ -22,7 +26,7 @@ public class usuariController {
         c0.loading.setVisible(true);
         c0.clear();
         JSONObject obj = new JSONObject("{}");
-        obj.put("phone",this.phone.getText());
+        obj.put("id",this.id);
         c0.loading.setVisible(true);
         UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +"/API/get_profile",obj.toString(), (response) -> {
             JSONObject objResponse = new JSONObject(response);
@@ -39,7 +43,27 @@ public class usuariController {
                     c0.setSurname(console.getString("surname"));
                     c0.setEmail(console.getString("email"));
                     c0.setWallet(String.valueOf(console.getInt("wallet")));
-    
+
+                    usuarisController.id=console.getInt("id");
+                    if(!console.get("front").equals(null) && !console.get("back").equals(null) && console.getInt("status")!=3 && console.getInt("status")!=1){
+                        c0.very.setDisable(false);
+                        c0.refus.setDisable(false);
+                        c0.very.setVisible(true);
+                        c0.refus.setVisible(true); 
+                        // TODO PUT IMAGES HERE
+                        String front = objResponse.getString("front");
+                        String back = objResponse.getString("back");
+
+                        // Transformar la cadena de text amb dades binàries en un byte[]
+                        byte[] decodedfront = Base64.getDecoder().decode(front);
+                        byte[] decodedback = Base64.getDecoder().decode(back);
+                        
+                        // Crear un objecte ‘Image’ amb les dades rebudes i posar-les en una imatge
+                        Image img = new Image(new java.io.ByteArrayInputStream(decodedfront));
+                        c0.img1.setImage(img);
+                        Image img22 = new Image(new java.io.ByteArrayInputStream(decodedback));
+                        c0.img2.setImage(img22);
+                    }
                 }
             }
 
@@ -92,4 +116,9 @@ public class usuariController {
         this.phone.setText(phone);
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    
 }
