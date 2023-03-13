@@ -122,8 +122,7 @@ public class usuarisController {
         very.setVisible(false);
         very.setDisable(true);
         refus.setDisable(true);
-        img1.setImage(null);
-        img2.setImage(null);
+        
         JSONObject obj = new JSONObject("{}");
         loading.setVisible(true);
         UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/get_profiles",obj.toString(), (response) -> {
@@ -262,4 +261,11 @@ public class usuarisController {
             
         });
     }
+    public void setImg1(Image img1) {
+        this.img1.setImage(img1);
+    }
+    public void setImg2(Image img2) {
+        this.img2.setImage(img2);
+    }
+    
 }

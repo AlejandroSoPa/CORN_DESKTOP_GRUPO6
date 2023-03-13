@@ -30,6 +30,7 @@ public class usuariController {
         c0.loading.setVisible(true);
         UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host +"/API/get_profile",obj.toString(), (response) -> {
             JSONObject objResponse = new JSONObject(response);
+            System.out.println("-------------------------------------------------");
             
             if (objResponse.getString("status").equals("OK")) {
                 JSONArray JSONlist = objResponse.getJSONArray("result");
@@ -45,25 +46,30 @@ public class usuariController {
                     c0.setWallet(String.valueOf(console.getInt("wallet")));
 
                     usuarisController.id=console.getInt("id");
-                    if(!console.get("front").equals(null) && !console.get("back").equals(null) && console.getInt("status")!=3 && console.getInt("status")!=1){
-                        c0.very.setDisable(false);
-                        c0.refus.setDisable(false);
-                        c0.very.setVisible(true);
-                        c0.refus.setVisible(true); 
-                        // TODO PUT IMAGES HERE
-                        String front = objResponse.getString("front");
-                        String back = objResponse.getString("back");
-
-                        // Transformar la cadena de text amb dades binàries en un byte[]
-                        byte[] decodedfront = Base64.getDecoder().decode(front);
-                        byte[] decodedback = Base64.getDecoder().decode(back);
-                        
-                        // Crear un objecte ‘Image’ amb les dades rebudes i posar-les en una imatge
-                        Image img = new Image(new java.io.ByteArrayInputStream(decodedfront));
-                        c0.img1.setImage(img);
-                        Image img22 = new Image(new java.io.ByteArrayInputStream(decodedback));
-                        c0.img2.setImage(img22);
+                    try {
+                        if(!console.get("front").equals(null) && !console.get("back").equals(null) && console.getInt("status")!=3 && console.getInt("status")!=1){
+                            c0.very.setDisable(false);
+                            c0.refus.setDisable(false);
+                            c0.very.setVisible(true);
+                            c0.refus.setVisible(true); 
+                            // TODO PUT IMAGES HERE
+                            String front = console.getString("front");
+                            String back = console.getString("back");
+                            
+                            // Transformar la cadena de text amb dades binàries en un byte[]
+                            byte[] decodedfront = Base64.getDecoder().decode(front);
+                            byte[] decodedback = Base64.getDecoder().decode(back);
+                            
+                            // Crear un objecte ‘Image’ amb les dades rebudes i posar-les en una imatge
+                            Image img = new Image(new java.io.ByteArrayInputStream(decodedfront));
+                            c0.setImg1(img);
+                            Image img22 = new Image(new java.io.ByteArrayInputStream(decodedback));
+                            c0.setImg2(img22);
+                        }
+                    } catch (Exception e) {
+                        // TODO: handle exception
                     }
+                    
                 }
             }
 
