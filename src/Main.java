@@ -18,7 +18,7 @@ public class Main extends Application {
     // public static String protocolWS = "ws";
 
     // Exemple de configuració per Railway
-    public static int port = 8015;
+    public static int port = 5997;
     public static String protocol = "https";
     public static String host = "cornapigrupo6-production.up.railway.app";
     public static String protocolWS = "wss";
@@ -41,7 +41,10 @@ public class Main extends Application {
 
         UtilsViews.parentContainer.setStyle("-fx-font: 14 arial;");
 
-        UtilsViews.addView(getClass(), "usuaris", "./assets/usuaris.fxml");
+        try {
+            
+            UtilsViews.addView(getClass(), "usuaris", "./assets/usuaris.fxml");
+        
 
         //test 
         usuarisController c0=(usuarisController) UtilsViews.getController("usuaris");
@@ -62,7 +65,10 @@ public class Main extends Application {
         stage.setMinWidth(windowWidth);
         stage.setMinHeight(windowHeight);
         stage.show();
-
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
         // Image icon = new Image("file:./assets/icon.png");
         // stage.getIcons().add(icon);
     }

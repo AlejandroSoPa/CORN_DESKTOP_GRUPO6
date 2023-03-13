@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -12,7 +17,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1084.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="usuarisController">
    <children>
       <Label layoutX="269.0" layoutY="22.0" prefHeight="46.0" prefWidth="161.0" text="USUARIS">
          <font>
@@ -40,7 +45,7 @@
             </LinearGradient>
          </textFill></Label>
       <Label fx:id="Info" layoutX="286.0" layoutY="372.0" textFill="#ff1c0d" />
-      <ProgressIndicator fx:id="loading" layoutX="324.0" layoutY="198.0" visible="false" />
+      <ProgressIndicator fx:id="loading" layoutX="322.0" layoutY="248.0" visible="false" />
       <ScrollPane layoutX="376.0" layoutY="76.0" prefHeight="296.0" prefWidth="302.0">
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" />
@@ -107,13 +112,13 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <ScrollPane layoutX="21.0" layoutY="76.0" prefHeight="601.0" prefWidth="302.0">
+      <ScrollPane layoutX="21.0" layoutY="252.0" prefHeight="422.0" prefWidth="302.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="298.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="298.0">
                <children>
-                  <ScrollPane prefHeight="602.0" prefWidth="294.0">
+                  <ScrollPane layoutX="2.0" layoutY="1.0" prefHeight="422.0" prefWidth="302.0">
                      <content>
-                        <VBox fx:id="yPane" prefHeight="598.0" prefWidth="298.0">
+                        <VBox fx:id="yPane" prefHeight="419.0" prefWidth="298.0">
                            <cursor>
                               <Cursor fx:constant="CROSSHAIR" />
                            </cursor>
@@ -147,5 +152,45 @@
             <InnerShadow />
          </effect>
       </ScrollPane>
+      <Label layoutX="21.0" layoutY="76.0" text="Filtres:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="max1" layoutX="259.0" layoutY="106.0" prefHeight="26.0" prefWidth="63.0" />
+      <Spinner fx:id="min1" layoutX="172.0" layoutY="106.0" prefHeight="26.0" prefWidth="63.0" />
+      <Label layoutX="245.0" layoutY="110.0" text="-" />
+      <Label layoutX="62.0" layoutY="109.0" text="Rang de saldos:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="2.0" layoutY="142.0" text="Nombre de transaccions:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="min2" layoutX="172.0" layoutY="139.0" prefHeight="26.0" prefWidth="63.0" />
+      <Spinner fx:id="max2" layoutX="259.0" layoutY="139.0" prefHeight="26.0" prefWidth="63.0" />
+      <Label layoutX="245.0" layoutY="143.0" text="-" />
+      <Label layoutX="129.0" layoutY="178.0" text="Estat:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="drop" layoutX="172.0" layoutY="176.0" prefWidth="150.0" promptText="Qualsevol" />
+      <ImageView fx:id="img1" fitHeight="296.0" fitWidth="342.0" layoutX="720.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@No_Image_Available.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="img2" fitHeight="296.0" fitWidth="342.0" layoutX="720.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@No_Image_Available.jpg" />
+         </image></ImageView>
+      <Button layoutX="269.0" layoutY="213.0" mnemonicParsing="false" onAction="#filter" text="Aplicar" />
+      <Button layoutX="166.0" layoutY="213.0" mnemonicParsing="false" onAction="#filterClean" text="Netejar" />
+      <Button fx:id="refus" disable="true" layoutX="819.0" layoutY="33.0" mnemonicParsing="false" onAction="#refuse" text="REBUTJAR" visible="false" />
+      <Button fx:id="very" disable="true" layoutX="917.0" layoutY="33.0" mnemonicParsing="false" onAction="#verify" text="VERIFICAR" visible="false" />
+      <Label fx:id="info" layoutX="903.0" layoutY="25.0" text="Estat actualitzat" textFill="#004fae" visible="false" />
    </children>
 </AnchorPane>
