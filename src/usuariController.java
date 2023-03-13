@@ -44,10 +44,12 @@ public class usuariController {
                     c0.setSurname(console.getString("surname"));
                     c0.setEmail(console.getString("email"));
                     c0.setWallet(String.valueOf(console.getInt("wallet")));
+                    
 
                     usuarisController.id=console.getInt("id");
                     try {
                         if(!console.get("front").equals(null) && !console.get("back").equals(null) && console.getInt("status")!=3 && console.getInt("status")!=1){
+                            c0.setStatus(console.getInt("status"));
                             c0.very.setDisable(false);
                             c0.refus.setDisable(false);
                             c0.very.setVisible(true);

@@ -75,6 +75,8 @@ public class usuarisController {
 
     public static Integer id;
 
+    private Integer status;
+
     private void loadUsersCallback (String response) {
 
         JSONObject objResponse = new JSONObject(response);
@@ -195,6 +197,11 @@ public class usuarisController {
         this.phone.setText("");
         this.email.setText(""); 
         this.wallet.setText("");
+        this.img1.setImage(new Image("./assets/No_Image_Available.jpg"));
+        this.img2.setImage(new Image("./assets/No_Image_Available.jpg"));
+        this.very.setVisible(false);
+        this.refus.setVisible(false);
+        this.info.setVisible(false);
         this.yPane2.getChildren().clear();
     }
 
@@ -245,6 +252,7 @@ public class usuarisController {
         JSONObject obj = new JSONObject("{}");
         loading.setVisible(true);
         obj.put("id",this.id );
+        obj.put("status", this.status);
         UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/validate",obj.toString(), (response) -> {
             
             loading.setVisible(false);
@@ -266,6 +274,9 @@ public class usuarisController {
     }
     public void setImg2(Image img2) {
         this.img2.setImage(img2);
+    }
+    public void setStatus(Integer status) {
+        this.status = status;
     }
     
 }
