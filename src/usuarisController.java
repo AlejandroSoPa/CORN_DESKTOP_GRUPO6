@@ -252,7 +252,8 @@ public class usuarisController {
         JSONObject obj = new JSONObject("{}");
         loading.setVisible(true);
         obj.put("id",this.id );
-        obj.put("status", this.status);
+        System.out.println(this.id);
+        obj.put("status", type);
         UtilsHTTP.sendPOST(Main.protocol + "://" + Main.host + "/API/validate",obj.toString(), (response) -> {
             
             loading.setVisible(false);

@@ -48,12 +48,15 @@ public class usuariController {
 
                     usuarisController.id=console.getInt("id");
                     try {
-                        if(!console.get("front").equals(null) && !console.get("back").equals(null) && console.getInt("status")!=3 && console.getInt("status")!=1){
+                        if(!console.get("front").equals(null) && !console.get("back").equals(null) &&  console.getInt("status")!=1){
                             c0.setStatus(console.getInt("status"));
-                            c0.very.setDisable(false);
-                            c0.refus.setDisable(false);
-                            c0.very.setVisible(true);
-                            c0.refus.setVisible(true); 
+                            if(console.getInt("status")!=3 ){
+
+                                c0.very.setDisable(false);
+                                c0.refus.setDisable(false);
+                                c0.very.setVisible(true);
+                                c0.refus.setVisible(true); 
+                            }
                             // TODO PUT IMAGES HERE
                             String front = console.getString("front");
                             String back = console.getString("back");
