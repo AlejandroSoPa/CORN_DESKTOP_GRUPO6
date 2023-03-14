@@ -58,6 +58,7 @@ public class UtilsHTTP {
                     }
                 } catch (Exception e) {
                     System.out.println(type + " request error.");
+                    System.out.println(e);
                 }
                 return "{ \"status\": \"KO\", \"result\": \"Error on " + type + " request\" }";
             }
